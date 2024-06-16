@@ -1,0 +1,25 @@
+<!-- ... Código anterior ... -->
+
+<ion-content [fullscreen]="true">
+  <div class="arriba">
+    <ion-button class="iniciar" (click)="startGame()">Comenzar Juego</ion-button>
+  </div>
+
+  <div class="card-grid">
+    <ion-card
+      *ngFor="let card of cards; let i = index"
+      [class.flipped]="card.isFlipped"
+      (click)="cardClicked(i)"
+    >
+      <img [src]="card.isFlipped ? 'assets/cards/facil/' + card.image : 'assets/cards/back.jpg'" alt="Card" />
+    </ion-card>
+  </div>
+
+  <div *ngIf="isGameStarted && !isGameFinished" class="victoria">
+    <p>Tiempo transcurrido: {{ elapsedTime }} segundos</p>
+  </div>
+
+  <div *ngIf="isGameFinished" class="victoria">
+    <p>¡Has ganado! Tiempo: {{ elapsedTime }} segundos</p>
+  </div>
+</ion-content>

@@ -1,17 +1,33 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
+    <ion-title style="text-align: center; font-size: 25px;">
+      Seleccionar dificultad
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="botones">
+    <ion-button (click)="asignarDificultad('facil')">
+      Fácil
+    </ion-button>
+    <ion-button (click)="asignarDificultad('medio')">
+      Medio
+    </ion-button>
+    <ion-button (click)="asignarDificultad('dificil')">
+      Difícil
+    </ion-button>
+    <ion-button (click)="logout()">
+      Cerrar sesión
+    </ion-button>
+  </div>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div class="ranking">
+    <ion-button (click)="asignarDificultad('top')" style="font-size: 25px;">
+      Ver top 5
+    </ion-button>
+  </div>
+  <div class="imagen">
+    <img src="../../assets/trofeo.png" alt="">
+  </div>
 </ion-content>
